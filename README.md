@@ -2,7 +2,7 @@
 
 This project builds a robust comparable property (comp) selection system from a messy real estate dataset of appraisals. The goal is to train a learning-to-rank model (e.g., LambdaMART) that identifies which candidate properties are most comparable to a given subject property.
 
-Features
+**Features**
 Flexible JSON Loader: Handles multiple formats including:
 
 JSON lists ([{}])
@@ -17,18 +17,19 @@ Flattening Logic: Converts nested dictionaries into flat, prefixed columns.
 
 Missing Value Preservation: All missing values are preserved as NaN, making the data suitable for models like LightGBM or XGBoost.
 
-Pipeline Overview
-Load and Parse Data
+**Pipeline Overview**
+
+**Load and Parse Data**
 
 Uses a custom streaming parser with bracket-counting to handle malformed or inconsistent formats.
 
 Each appraisal expands into one row per subject-candidate pair.
 
-Data Output
+**Data Output**
 
 Final output is a DataFrame with shape approximately (9800, 120), ready for feature engineering and modeling.
 
-Next Steps
+**Next Steps**
 
 Engineer delta features between subject and candidate properties.
 
