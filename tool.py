@@ -5,7 +5,7 @@ import json, json5, glob, os
 
 
 """
-You’re building a comp-selection system from a messy real-estate dataset. So far we (1) cleaned your repo structure and moved appraisals_dataset.json into data/; (2) wrote a Python loader that flattens each appraisal into one row per subject-candidate pair, keeps every missing value as NaN, and now robustly parses any file shape—JSON list, ND-JSON, or back-to-back multi-line objects—via a bracket-counting stream that falls back to json5 for un-quoted keys; and (3) confirmed the next milestone is to engineer delta features and handle NaNs (LightGBM/XGBoost can ingest them directly, with optional missing-value indicators). The loader should end with something like Shape: (≈9 800, ≈120) and a non-empty DataFrame; from here the task is to add feature engineering, train a LambdaMART ranker, and plug in SHAP for explanations.
+ building a comp-selection system from a messy real-estate dataset.  wrote a Python loader that flattens each appraisal into one row per subject-candidate pair, keeps every missing value as NaN, and now robustly parses any file shape—JSON list, ND-JSON, or back-to-back multi-line objects—via a bracket-counting stream that falls back to json5 for un-quoted keys; athe next milestone is to engineer delta features and handle NaNs (LightGBM/XGBoost can ingest them directly, with optional missing-value indicators). The loader should end with something like Shape: (≈9 800, ≈120) and a non-empty DataFrame; from here the task is to add feature engineering, train a LambdaMART ranker, and plug in SHAP for explanations.
 """
 
 def flatten(d, prefix=""):
